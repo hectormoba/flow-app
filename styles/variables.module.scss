@@ -1,0 +1,36 @@
+/* font sizes */
+$xlplus-fs: 100px;
+$xl-fs: 28px;
+$l-fs: 16px;
+$m-fs: 14px;
+$s-fs: 12px;
+
+/* line height */
+$xlplus-lh: 120px;
+$xl-lh: 34px;
+$l-lh: 19px;
+$m-lh: 17px;
+$s-lh: 14px;
+
+$xl-letter-spacing: 15px;
+$l-letter-spacing: 5px;
+$neg-letter-spacing: -5px;
+
+/* Colors */
+
+$main-bg: #1e213f;
+$modal-bg: #4a4d65;
+$option-bg: #eff1fa;
+$main-action: #f87070;
+$secondary-action: #70f3f8;
+$option-selected: #161932;
+$font-color: #d7e0ff;
+
+/* TEXT AND TITLES */
+
+@mixin font-set($font-size, $line-height, $spacing: 0, $weight: bold) {
+  font-size: $font-size;
+  line-height: $line-height;
+  letter-spacing: $spacing;
+  font-weight: $weight;
+}
