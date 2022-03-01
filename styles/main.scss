@@ -4,12 +4,17 @@ body {
   margin: 0;
   font-family: "Titillium Web", sans-serif;
   background-color: $main-bg;
+  color: $font-color;
+}
+
+.main {
+  padding: $m-spacing;
 }
 
 /* HELPERS */
 
 .font-xlplus {
-  @include font-set($xlplus-fs, $xlplus-lh, $neg-letter-spacing);
+  @include font-set($xlplus-fs, $xlplus-lh);
 }
 
 .font-xl {
@@ -24,4 +29,16 @@ body {
 .font-m {
   @include font-set($m-fs, $m-lh);
   text-transform: uppercase;
+}
+
+/* Global resets */
+
+// avoiding h1,h2 brower size in FF
+
+h1 {
+  @include font-set($xlplus-fs, $xlplus-lh);
+}
+
+h2 {
+  @include font-set($xl-fs, $xl-lh);
 }

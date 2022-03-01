@@ -1,13 +1,13 @@
 .header {
   display: flex;
-  padding: $m-spacing $s-spacing;
-  gap: $xl-spacing;
+  padding: $m-spacing;
   justify-content: space-between;
   align-items: center;
 }
 
 .image {
-  box-sizing: content-box;
+  background-color: white;
+  border-radius: 50%;
 }
 
 .title {

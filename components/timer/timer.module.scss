@@ -1,0 +1,42 @@
+.timer {
+  max-width: 100%;
+  min-height: 30vh;
+  padding: $xl-spacing;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.timer__numbers {
+  //reduce font size in mobile
+  font-size: 80px !important;
+  margin: 0;
+}
+
+.timer__button {
+  padding: 0;
+  //centering text
+  padding-left: 15px;
+  background-color: $main-bg;
+  border: none;
+  color: $font-color;
+}
+
+.pause {
+  display: flex;
+  justify-content: center;
+  gap: $s-spacing;
+  :nth-child(2n) {
+    text-align: center;
+  }
+}
+
+.pause__item {
+  min-width: 25%;
+  .text-m {
+    text-align: center;
+  }
+}
