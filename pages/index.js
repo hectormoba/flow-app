@@ -1,7 +1,8 @@
 import HomeLayout from "components/layouts/home/HomeLayout";
+import Timer from "components/timer/Timer";
 
 export default function HomePage() {
-  return <h1>Hello, react!</h1>
+  return <Timer />
 }
 
 HomePage.getLayout = function getLayout(page){

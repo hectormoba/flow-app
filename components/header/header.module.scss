@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  padding: $m-spacing $s-spacing;
+  gap: $xl-spacing;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.image {
+  box-sizing: content-box;
+}
+
+.title {
+  color: $font-color;
+  margin: 0;
+}
