@@ -1,0 +1,13 @@
+.section_wrapper {
+  height: 5vh;
+  margin-bottom: $xl-spacing;
+  display: flex;
+  justify-content: space-around;
+}
+
+.slider {
+  flex-basis: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,16 +1,5 @@
 @import "variables.scss";
 
-body {
-  margin: 0;
-  font-family: "Titillium Web", sans-serif;
-  background-color: $main-bg;
-  color: $font-color;
-}
-
-.main {
-  padding: $m-spacing;
-}
-
 /* HELPERS */
 
 .font-xlplus {
@@ -31,7 +20,23 @@ body {
   text-transform: uppercase;
 }
 
+.modal_main {
+  background-color: $font-color;
+  color: $main-bg;
+}
+
 /* Global resets */
+
+body {
+  margin: 0;
+  font-family: "Titillium Web", sans-serif;
+  background-color: $main-bg;
+  color: $font-color;
+}
+
+.main {
+  padding: $m-spacing;
+}
 
 // avoiding h1,h2 brower size in FF
 
@@ -41,4 +46,15 @@ h1 {
 
 h2 {
   @include font-set($xl-fs, $xl-lh);
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  &:visited {
+    color: inherit;
+  }
 }
