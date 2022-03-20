@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import ModalLayout from 'components/layouts/modal/ModalLayout';
-import close from 'public/icons8-close-30.png';
+import Close from 'public/icons8-close-30.png';
 
 export default function Settings(){
   return (
@@ -11,7 +11,7 @@ export default function Settings(){
         <Link href="/">
           <Image 
             layout="fixed"
-            src={close}
+            src={Close}
           />
         </Link>
       </nav>

@@ -20,9 +20,20 @@
   text-transform: uppercase;
 }
 
+.main {
+  padding: $m-spacing;
+  @media (min-width: $mobile) {
+    padding: 0;
+    max-width: $mobile-width;
+    margin: 0 auto;
+  }
+}
+
 .modal_main {
   background-color: $font-color;
   color: $main-bg;
+  position: absolute;
+  z-index: 1;
 }
 
 /* Global resets */
@@ -32,10 +43,6 @@ body {
   font-family: "Titillium Web", sans-serif;
   background-color: $main-bg;
   color: $font-color;
-}
-
-.main {
-  padding: $m-spacing;
 }
 
 // avoiding h1,h2 brower size in FF

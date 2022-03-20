@@ -1,12 +1,12 @@
 import HomeLayout from "components/layouts/home/HomeLayout";
 import Slider from "components/slider/Slider"
-import Timer from "components/timer/Timer";
+import Clock from "lib/clock/Clock";
 
 export default function HomePage() {
   return (
     <>
       <Slider />
-      <Timer />
+      <Clock />
     </>
   )
 }
