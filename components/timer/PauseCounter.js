@@ -2,25 +2,32 @@ import { useState, useEffect } from 'react';
 import styles from './timer.module.scss';
 
 export default function PauseCounter(props){
-  const { isActivePause, pauseCount } = props;
+  const { isActivePause, pauseCount, setIsActivePause } = props;
   const [ pauseMinutes, setPauseMinutes ] = useState(5);
   const [ pauseSeconds, setPauseSeconds ] = useState(0);
+
+  console.log(isActivePause);
 
   useEffect(() => {
     let interval = null;
     if(isActivePause) {
       if(pauseMinutes === 0 && pauseSeconds === 0) {
-        // pause = false and restart timer
-      } else if(pauseSeconds === 0) {
+        setIsActivePause(!isActivePause);
+      } 
+      
+      if(pauseSeconds === 0 && pauseMinutes !== 0) {
         interval = setInterval(() => {
-          setPauseMinutes(pauseMinutes - 1);
           setPauseSeconds(59);
+          setPauseMinutes(pauseMinutes - 1);
         }, 200)
-      } else {
+      }  
+      
+      if(pauseSeconds !== 0){
         interval = setInterval(() => {
           setPauseSeconds(pauseSeconds - 1);
         }, 200);
       }
+
     } else if(!isActivePause) {
       clearInterval(interval),
       setPauseMinutes(5)

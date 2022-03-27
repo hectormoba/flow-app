@@ -7,12 +7,13 @@ export default function Timer(props){
   const [ pauseCount , setPauseCount ] = useState(4)
   const [ isActivePause, setIsActivePause ] = useState (false);
 
+
   const handleClick = () => {
     if(!isActive) {
       if(isActivePause && pauseCount > 0) {
         startStop();
         setPauseCount(pauseCount - 1)
-        setIsActivePause(!isActivePause)
+        setIsActivePause(!isActivePause);
       } else {
         startStop();
       } 
@@ -23,10 +24,8 @@ export default function Timer(props){
   }
 
   useEffect(() => {
-    if(!isActive && (minutes === 0 && seconds === 0)) {
-      setIsActivePause(!isActivePause)
-    }
-  },[isActive])
+   
+  },[])
 
   let time = "00:00:00"
 
@@ -50,6 +49,7 @@ export default function Timer(props){
       <PauseCounter 
         isActivePause={isActivePause}
         pauseCount={pauseCount}
+        setIsActivePause={setIsActivePause}
       />
     </>
   )
