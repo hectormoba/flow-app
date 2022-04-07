@@ -1,8 +1,11 @@
 .section_wrapper {
-  height: 5vh;
+  height: 6vh;
   margin-bottom: $xl-spacing;
+  padding: 5px;
   display: flex;
   justify-content: space-around;
+  border-radius: 50px;
+  background-color: $accent-bg;
 }
 
 .slider {
@@ -10,4 +13,5 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 50px;
 }

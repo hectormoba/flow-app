@@ -1,12 +1,11 @@
 import HomeLayout from "components/layouts/home/HomeLayout";
-import Slider from "components/slider/Slider"
 import Clock from "lib/clock/Clock";
 
-export default function HomePage() {
+export default function HomePage(props) {
+  const { string } = props;
   return (
     <>
-      <Slider />
-      <Clock />
+      <Clock string={string}/>
     </>
   )
 }

@@ -3,7 +3,8 @@ import Link from 'next/link';
 import ModalLayout from 'components/layouts/modal/ModalLayout';
 import Close from 'public/icons8-close-30.png';
 
-export default function Settings(){
+export default function Settings(props){
+  const { string } = props;
   return (
     <>
       <nav>
@@ -18,18 +19,18 @@ export default function Settings(){
       <section>
         <form>
           <h3>Time</h3>
-          <p>Select a time for a flowing season</p>
+          <p>Select a time for a flowing season {string}</p>
           <div>
             <input type="radio" id="one-hour" />
-            <label for="one-hour">One hour</label>
+            <label htmlFor="one-hour">One hour</label>
           </div>
           <div>
             <input type="radio" id="two-hour"/>
-            <label for="two-hour">Two hours</label>
+            <label htmlFor="two-hour">Two hours</label>
           </div>
           <div>
             <input type="radio" id="three-hour"/>
-            <label for="three-hour">Three hours</label>
+            <label htmlFor="three-hour">Three hours</label>
           </div>
           <p>Select a duration for your short brake</p>
           <input type="number" max="5" min="1"/>

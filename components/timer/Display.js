@@ -7,6 +7,11 @@ export default function Timer(props){
   const [ pauseCount , setPauseCount ] = useState(4)
   const [ isActivePause, setIsActivePause ] = useState (false);
 
+  let strokeHash = {
+    strokeDasharray: '283 283'
+  }
+
+
 
   const handleClick = () => {
     if(!isActive) {
@@ -22,10 +27,6 @@ export default function Timer(props){
       setIsActivePause(!isActivePause);
     }
   }
-
-  useEffect(() => {
-   
-  },[])
 
   let time = "00:00:00"
 
@@ -43,6 +44,21 @@ export default function Timer(props){
   return(
     <>
       <section className={`${styles.timer} font-xlplus`}>
+        <svg className={styles.timer__svg} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <g className={styles.timer__circle}>
+          <path
+            id="base-timer-path-remaining"
+            className={styles["timer__circle-path"]}
+            style={strokeHash}
+            d="
+              M 50, 50
+              m -45, 0
+              a 45,45 0 1,0 90,0
+              a 45,45 0 1,0 -90,0
+            "
+          />
+          </g>
+         </svg>
         <h1 className={styles.timer__numbers}>{time}</h1>
         <button onClick={handleClick} className={`${styles.timer__button} font-l`}>{isActive ? "Pause" : "Start"}</button>
       </section>

@@ -6,8 +6,6 @@ export default function PauseCounter(props){
   const [ pauseMinutes, setPauseMinutes ] = useState(5);
   const [ pauseSeconds, setPauseSeconds ] = useState(0);
 
-  console.log(isActivePause);
-
   useEffect(() => {
     let interval = null;
     if(isActivePause) {

@@ -1,13 +1,36 @@
+@import "variables.scss";
+
 .timer {
+  position: relative;
+
   max-width: 100%;
-  min-height: 30vh;
-  padding: $xl-spacing;
+  min-height: 45vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  border: 1px solid black;
+  align-items: center;
+  padding: $xl-spacing 0;
+}
+
+.timer__svg {
+  position: absolute;
+  z-index: -1;
   border-radius: 50%;
+  background-color: $accent-bg;
+  transform: scaleX(-1);
+}
+
+.timer__circle {
+  fill: none;
+}
+
+.timer__circle-path {
+  stroke: $secondary-action;
+  stroke-width: 7px;
+  stroke-linecap: round;
+  transform: rotate(90deg);
+  transform-origin: center;
+  transition: 1s linear all;
 }
 
 .timer__numbers {
