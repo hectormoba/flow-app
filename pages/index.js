@@ -2,10 +2,10 @@ import HomeLayout from "components/layouts/home/HomeLayout";
 import Clock from "lib/clock/Clock";
 
 export default function HomePage(props) {
-  const { string } = props;
+  const { timeOpt } = props;
   return (
     <>
-      <Clock string={string}/>
+      <Clock timeOpt={timeOpt}/>
     </>
   )
 }

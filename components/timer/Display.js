@@ -3,14 +3,27 @@ import styles from './timer.module.scss';
 import PauseCounter from "./PauseCounter";
 
 export default function Timer(props){
-  const { seconds, minutes, hours, startStop, isActive } = props;
-  const [ pauseCount , setPauseCount ] = useState(4)
+  const { seconds, minutes, hours, startStop, isActive, timeOpt } = props;
+  const [ pauseCount , setPauseCount ] = useState(4);
+  const [ remainingCircle, setRemainingCircle ] = useState("283")
   const [ isActivePause, setIsActivePause ] = useState (false);
 
   let strokeHash = {
-    strokeDasharray: '283 283'
+    strokeDasharray: `${remainingCircle} 283`
   }
 
+  const circleProgress = () => {
+    const { time } = timeOpt
+    let totalTime = time === undefined ? 40 * 60 : Number(time) * 60;
+    let restTime = (hours * 60 * 60) + (minutes * 60) + seconds;
+    setRemainingCircle(
+      ((restTime/totalTime) * 283).toFixed(0)
+    )
+  }
+
+  useEffect(()=>{
+    circleProgress();
+  },[seconds, timeOpt])
 
 
   const handleClick = () => {
