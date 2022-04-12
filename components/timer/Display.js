@@ -15,9 +15,8 @@ export default function Timer(props){
 
   const circleProgress = () => {
     
-    let totalTime = time === undefined ? 1 * 60 : Number(time) * 60;
+    let totalTime = Number(time) * 60;
     let restTime = (hours * 60 * 60) + (minutes * 60) + seconds;
-    console.log(totalTime, restTime);
     setRemainingCircle(
       ((restTime/totalTime) * 283).toFixed(0)
     )
@@ -44,7 +43,6 @@ export default function Timer(props){
 
   let displayedTime = "00:00:00"
 
-
   if(minutes < 10 && seconds < 10) {
     displayedTime = `0${hours}:0${minutes}:0${seconds}`
   } else if(minutes < 10 && seconds >= 10) {
@@ -54,8 +52,6 @@ export default function Timer(props){
   } else {
     displayedTime = `0${hours}:${minutes}:${seconds}`
   }
-
-  console.log(remainingCircle, displayedTime);
 
   return(
     <>

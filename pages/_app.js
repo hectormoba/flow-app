@@ -3,7 +3,10 @@ import { useState } from 'react';
 
 export default function MyApp({ Component, pageProps }) {
   const getLayout = Component.getLayout || ((page) => page);
-  const [timeOpt, setTimeOpt] = useState({}) 
+  const [timeOpt, setTimeOpt] = useState({
+    time: "50",
+    shortBrake: ""
+  }) 
   return getLayout(
     <Component 
       {...pageProps}

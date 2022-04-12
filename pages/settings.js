@@ -8,7 +8,7 @@ export default function Settings(props){
   const { setTimeOpt } = props;
   const [sendForm, setSendForm] = useState(false)
   const [ form, setForm ] = useState({
-    time: "40",
+    time: "50",
     shortBrake: ""
   });
 
