@@ -2,9 +2,21 @@ import { useState, useEffect } from 'react';
 import styles from './timer.module.scss';
 
 export default function PauseCounter(props){
-  const { isActivePause, pauseCount, setIsActivePause } = props;
+  const { 
+    isActivePause, 
+    setIsActivePause,
+    timeOpt,
+    pauseCount,
+    changeCount } = props;
+  let { time, shortBrake } = timeOpt
   const [ pauseMinutes, setPauseMinutes ] = useState(5);
   const [ pauseSeconds, setPauseSeconds ] = useState(0);
+
+  useEffect(()=>{
+    time === "90" ? changeCount(3)
+      : time === "130" ? changeCount(4)
+      : changeCount(2);
+  },[timeOpt])
 
   useEffect(() => {
     let interval = null;

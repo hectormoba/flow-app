@@ -4,18 +4,20 @@ import PauseCounter from "./PauseCounter";
 
 export default function Timer(props){
   const { seconds, minutes, hours, startStop, isActive, timeOpt } = props;
-  const [ pauseCount , setPauseCount ] = useState(4);
-  const [ remainingCircle, setRemainingCircle ] = useState("283")
+  let { time } = timeOpt;
+  const [ remainingCircle, setRemainingCircle ] = useState("283");
   const [ isActivePause, setIsActivePause ] = useState (false);
+  const [ pauseCount , setPauseCount ] = useState(2);
 
   let strokeHash = {
     strokeDasharray: `${remainingCircle} 283`
   }
 
   const circleProgress = () => {
-    const { time } = timeOpt
-    let totalTime = time === undefined ? 40 * 60 : Number(time) * 60;
+    
+    let totalTime = time === undefined ? 1 * 60 : Number(time) * 60;
     let restTime = (hours * 60 * 60) + (minutes * 60) + seconds;
+    console.log(totalTime, restTime);
     setRemainingCircle(
       ((restTime/totalTime) * 283).toFixed(0)
     )
@@ -24,7 +26,6 @@ export default function Timer(props){
   useEffect(()=>{
     circleProgress();
   },[seconds, timeOpt])
-
 
   const handleClick = () => {
     if(!isActive) {
@@ -41,18 +42,20 @@ export default function Timer(props){
     }
   }
 
-  let time = "00:00:00"
+  let displayedTime = "00:00:00"
 
 
   if(minutes < 10 && seconds < 10) {
-    time = `0${hours}:0${minutes}:0${seconds}`
+    displayedTime = `0${hours}:0${minutes}:0${seconds}`
   } else if(minutes < 10 && seconds >= 10) {
-    time = `0${hours}:0${minutes}:${seconds}`
+    displayedTime = `0${hours}:0${minutes}:${seconds}`
   } else if(minutes >= 10 && seconds < 10) {
-    time = `0${hours}:${minutes}:0${seconds}`
+    displayedTime = `0${hours}:${minutes}:0${seconds}`
   } else {
-    time = `0${hours}:${minutes}:${seconds}`
+    displayedTime = `0${hours}:${minutes}:${seconds}`
   }
+
+  console.log(remainingCircle, displayedTime);
 
   return(
     <>
@@ -72,12 +75,29 @@ export default function Timer(props){
           />
           </g>
          </svg>
-        <h1 className={styles.timer__numbers}>{time}</h1>
-        <button onClick={handleClick} className={`${styles.timer__button} font-l`}>{isActive ? "Pause" : "Start"}</button>
+        <h1 className={styles.timer__numbers}>{displayedTime}</h1>
+        {
+          pauseCount > 0 ? 
+          (<button
+            onClick={handleClick} 
+            className={`${styles.timer__button} font-l`}>
+              {isActive ? "Pause" : "Start"}
+          </button>)
+          : (<button
+            disabled
+            aria-autocomplete="off"
+            onClick={handleClick} 
+            className={`${styles.timer__button} font-l`}>
+              disabled
+          </button>)
+        }
+        
       </section>
-      <PauseCounter 
-        isActivePause={isActivePause}
+      <PauseCounter
+        timeOpt={timeOpt}
         pauseCount={pauseCount}
+        changeCount={setPauseCount} 
+        isActivePause={isActivePause}
         setIsActivePause={setIsActivePause}
       />
     </>
