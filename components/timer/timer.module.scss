@@ -2,7 +2,6 @@
 
 .timer {
   position: relative;
-
   max-width: 100%;
   min-height: 45vh;
   display: flex;
@@ -41,9 +40,7 @@
 
 .timer__button {
   padding: 0;
-  //centering text
-  padding-left: 15px;
-  background-color: $main-bg;
+  background-color: $accent-bg;
   border: none;
   color: $font-color;
 }
@@ -51,6 +48,9 @@
 .pause {
   display: flex;
   justify-content: center;
+  padding: $m-spacing;
+  background-color: $accent-bg;
+  border-radius: 8px;
   gap: $s-spacing;
   :nth-child(2n) {
     text-align: center;
@@ -59,7 +59,8 @@
 
 .pause__item {
   min-width: 25%;
-  .text-m {
+  &__title {
     text-align: center;
+    margin: 0;
   }
 }

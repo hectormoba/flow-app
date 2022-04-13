@@ -5,6 +5,11 @@ export default function Slider(props){
   
   let sliderWorking, sliderShortBrake, sliderLongBrake;
 
+  if(!isActive) {
+    sliderWorking =`${styles.slider}`;
+    sliderShortBrake =`${styles.slider}`;
+    sliderLongBrake =`${styles.slider}`;
+  }
   if(isActive) {
     sliderWorking =`${styles.slider} active`;
     sliderShortBrake =`${styles.slider}`;

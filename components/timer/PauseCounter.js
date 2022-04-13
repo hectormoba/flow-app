@@ -58,11 +58,11 @@ if(pauseSeconds < 10) {
   return(
     <section className={styles.pause}>
       <div className={styles.pause__item}>
-        <h3 className="text-m">Pause time</h3>
+        <h3 className={`${styles.pause__item__title} font-m`}>Pause time</h3>
         <p>{pauseTime}</p>
       </div>
       <div className={styles.pause__item}>
-        <h3 className="text-m">Remain</h3>
+        <h3 className={`${styles.pause__item__title} font-m`}>Remain</h3>
         <p>{pauseCount}</p>
       </div>
     </section>
