@@ -1,0 +1,15 @@
+.settings__container {
+  padding: $s-spacing;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background-color: $font-color;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.submitButton {
+  display: block;
+}

@@ -16,6 +16,8 @@ export default function PauseCounter(props){
     time === "90" ? changeCount(3)
       : time === "130" ? changeCount(4)
       : changeCount(2);
+    
+    setPauseMinutes(Number(shortBrake))
   },[timeOpt])
 
   useEffect(() => {
@@ -40,7 +42,7 @@ export default function PauseCounter(props){
 
     } else if(!isActivePause) {
       clearInterval(interval),
-      setPauseMinutes(5)
+      setPauseMinutes(Number(shortBrake))
       setPauseSeconds(0);
     }
     return () => clearInterval(interval);

@@ -1,9 +1,14 @@
 .footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   display: flex;
+  width: 100%;
   justify-content: center;
 }
 
 .options_wrapper {
   display: inline-block;
+  padding: $m-spacing 0;
   text-align: center;
 }
