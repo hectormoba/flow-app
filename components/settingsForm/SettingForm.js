@@ -9,7 +9,7 @@ export default function SettingsFrom(props){
   const [sendForm, setSendForm] = useState(false)
   const [ form, setForm ] = useState({
     time: "50",
-    shortBrake: ""
+    shortBrake: "2"
   });
 
   const handleChange = (event) => {
@@ -21,17 +21,31 @@ export default function SettingsFrom(props){
     }));
   }
 
+  console.log(form);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setTimeOpt(form);
     setSendForm(true);
-
   }
 
-  let formState;
+  let formState, totalTime, shortBrakeCount, restTime;
   if(sendForm) {
     formState= <p>You've updated flow time. Please return to the clock to see the changes</p>
   }
+
+  if(form.time === "50") {
+    totalTime = "50 minutes ";
+    shortBrakeCount = "2";
+  } else if(form.time === "90") {
+    totalTime = "1 hour and 30 minutes ";
+    shortBrakeCount = "3";
+  } else if (form.time === "130") {
+    totalTime = "1 hour and 30 minutes ";
+    shortBrakeCount = "4";
+  }
+
+  restTime = restTime = Number(form.time)*0.2;
 
   return (
     <section className={styles.settings__container}>
@@ -67,7 +81,8 @@ export default function SettingsFrom(props){
           />
           <input type="submit" value="update" className={styles.submitButton} />
           <div>
-            <p>You're going to start a flow of n hour/s with m possible short brakes. When you finish the flow you have m minuts for rest</p>
+            <p>You're going to start a flow of {totalTime} 
+              with {shortBrakeCount} possible short brakes. When you finish the flow you have {restTime} minuts for rest</p>
           </div>
         </form>
       </section>
