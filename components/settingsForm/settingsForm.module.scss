@@ -5,7 +5,7 @@
   background-color: $font-color;
 }
 
-.navBar {
+.nav-bar {
   display: flex;
   justify-content: space-between;
 }
@@ -14,4 +14,8 @@
   display: block;
   border: 2px solid $main-bg;
   background-color: $option-bg;
+}
+
+.input--number {
+  padding-left: 6px;
 }

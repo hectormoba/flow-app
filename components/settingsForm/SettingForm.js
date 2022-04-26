@@ -21,8 +21,6 @@ export default function SettingsFrom(props){
     }));
   }
 
-  console.log(form);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     setTimeOpt(form);
@@ -49,7 +47,7 @@ export default function SettingsFrom(props){
 
   return (
     <section className={styles.settings__container}>
-      <nav className={styles.navBar}>
+      <nav className={styles["nav-bar"]}>
         <h2 className={styles.title}>Settings</h2>
         <Link href="/">
           <Image 
@@ -74,6 +72,7 @@ export default function SettingsFrom(props){
           <input
             onChange={handleChange}
             value={form.shortBrake}
+            className={styles["input--number"]}
             name="shortBrake"
             type="number"
             max="5"
