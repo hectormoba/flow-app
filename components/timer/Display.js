@@ -1,12 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useLayoutEffect } from 'react';
 import styles from './timer.module.scss';
 import PauseCounter from "./PauseCounter";
 
 export default function Timer(props){
-  const { seconds, minutes, hours, startStop, isActive, timeOpt, freeTime } = props;
+  const { seconds, minutes, hours, startStop, isActive, timeOpt, freeTime, count } = props;
   let { time } = timeOpt;
   const [ remainingCircle, setRemainingCircle ] = useState("283");
-  const [ isActivePause, setIsActivePause ] = useState (false);
+  const [ isActivePause, setIsActivePause ] = useState(false);
   const [ pauseCount , setPauseCount ] = useState(2);
 
   let stroke = {
@@ -14,27 +14,32 @@ export default function Timer(props){
     stroke: `#f87070`
   }
 
-
   const circleProgress = () => {
-    
-    let totalTime = Number(time) * 60;
+    let totalTime = freeTime === false ? Number(time) * 60 : (Number(time) * 0.2) * 60;
     let restTime = (hours * 60 * 60) + (minutes * 60) + seconds;
     setRemainingCircle(
       ((restTime/totalTime) * 283).toFixed(0)
     )
   }
 
-  useEffect(()=>{
+  useEffect(()=> {
     circleProgress();
-  },[seconds, timeOpt])
+  },[seconds, timeOpt]);
 
-  console.log(freeTime)
+  useEffect(() => {
+    if(!isActive && !isActivePause) {
+      setRemainingCircle("283");
+    }
+  },[isActive])
 
+  //change color depending on is a long break or not
   if(freeTime) {
     stroke.stroke = `#70f3f8`
   } else {
     stroke.stroke = `#f87070`
   }
+
+  
 
   const handleClick = () => {
     if(!isActive) {
@@ -100,6 +105,7 @@ export default function Timer(props){
         
       </section>
       <PauseCounter
+        count={count}
         timeOpt={timeOpt}
         pauseCount={pauseCount}
         changeCount={setPauseCount} 
