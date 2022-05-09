@@ -13,12 +13,9 @@ export default function Header(){
   const [toggle, setToggle] = useState(false);
   const wide = useWindowWide(width.desktop);
 
-  console.log(wide);
-
   const handleClickMenu = () => {
     setToggle(!toggle);
   }
-
 
   const navBar = !wide ? 
     (

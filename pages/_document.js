@@ -16,6 +16,10 @@ class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap"
           />
+          <link 
+            rel="icon"
+            href="public/icons8-wave-lines-24.png"
+          />
         </Head>
         <Main />
         <NextScript />
