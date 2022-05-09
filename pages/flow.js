@@ -23,7 +23,7 @@ export default function FlowPage(){
 
 FlowPage.getLayout = function getLayout(page){
   return (
-    <HomeLayout>
+    <HomeLayout mainClass="section_main">
       {page}
     </HomeLayout>
   )

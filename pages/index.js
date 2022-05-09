@@ -12,7 +12,7 @@ export default function HomePage(props) {
 
 HomePage.getLayout = function getLayout(page){
   return (
-    <HomeLayout>
+    <HomeLayout mainClass="main">
       {page}
     </HomeLayout>
   )

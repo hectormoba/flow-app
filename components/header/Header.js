@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useWindowWide } from 'lib/clock/useWindowWide';
 import { width } from 'lib/clock/data';
 import MenuMobile from 'components/menu/menuMobile';
+import HeaderNavigation from 'components/navigation/HeaderNavigation';
 import menu from 'public/icons8-menu-48.png'
 import help from 'public/icons8-help-48.png'
 import styles from './header.module.scss'
@@ -29,9 +30,7 @@ export default function Header(){
         src={help}
       />
     ) : (
-      <nav>
-        <p>hellow</p>
-      </nav>
+      <HeaderNavigation styles={styles} />
     )
 
   return(

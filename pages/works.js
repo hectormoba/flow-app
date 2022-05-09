@@ -22,7 +22,7 @@ export default function WorksPage(){
 
 WorksPage.getLayout = function getLayout(page){
   return (
-    <HomeLayout>
+    <HomeLayout mainClass="section_main">
       {page}
     </HomeLayout>
   )

@@ -16,7 +16,7 @@ export default function AboutPage(){
 
 AboutPage.getLayout = function getLayout(page){
   return (
-    <HomeLayout>
+    <HomeLayout mainClass="section_main">
       {page}
     </HomeLayout>
   )

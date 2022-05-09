@@ -24,9 +24,10 @@
 
 .main {
   padding: $m-spacing;
-  @media (min-width: $mobile) {
+  min-width: $mobile-width;
+  @media (min-width: $tablet) {
     padding: 0;
-    max-width: $mobile-width;
+    max-width: 420px;
     margin: 0 auto;
   }
 }
@@ -36,6 +37,12 @@
   position: absolute;
   z-index: 1;
   padding: 20px;
+}
+
+.section_main {
+  padding-top: $xl-spacing;
+  max-width: 70%;
+  margin: 0 auto;
 }
 
 .active {
