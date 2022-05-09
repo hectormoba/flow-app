@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useWindowWide } from 'lib/clock/useWindowWide';
-import { width } from 'lib/clock/data';
-import MenuMobile from 'components/menu/menuMobile';
-import HeaderNavigation from 'components/navigation/HeaderNavigation';
-import menu from 'public/icons8-menu-48.png'
-import help from 'public/icons8-help-48.png'
-import styles from './header.module.scss'
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { useWindowWide } from "lib/clock/useWindowWide";
+import { width } from "lib/clock/data";
+import MenuMobile from "components/menu/MenuMobile";
+import HeaderNavigation from "components/navigation/HeaderNavigation";
+import menu from "public/icons8-menu-48.png"
+import help from "public/icons8-help-48.png"
+import styles from "./header.module.scss"
 
 export default function Header(){
   const [toggle, setToggle] = useState(false);
@@ -19,13 +19,16 @@ export default function Header(){
 
   const navBar = !wide ? 
     (
-      <Image
-        className={`${styles.image} icon`}
-        layout="fixed"
-        height={32}
-        width={32}
-        src={help}
-      />
+      <Link href="/works">
+        <Image
+          className={`${styles.image} icon`}
+          alt="Help icon"
+          layout="fixed"
+          height={32}
+          width={32}
+          src={help}
+        />
+      </Link>
     ) : (
       <HeaderNavigation styles={styles} />
     )
@@ -33,9 +36,10 @@ export default function Header(){
   return(
     <>
     <header className={styles.header}>
-      <div className={!wide ? "" : styles.header__desktop } >
+      <div className={!wide ? null : styles.header__desktop } >
         <Image
             className="icon"
+            alt="Open menu in mobile divices"
             layout="fixed"
             height={32}
             width={32}

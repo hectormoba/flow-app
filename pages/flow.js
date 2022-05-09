@@ -12,7 +12,7 @@ export default function FlowPage(){
       <ul>
         <li>Intense and focused concentration on the present moment</li>
         <li>A sense of personal control or agency over the situation or activity</li>
-        <li>A distortion of temporal experience, as one's subjective experience of time is altered</li>
+        <li>A distortion of temporal experience, as one&apos;s subjective experience of time is altered</li>
         <li>Experience of the activity as intrinsically rewarding, also referred to as autotelic experience</li>
       </ul>
       <p>To arrive to a flow state you need to spend much time that a 25 pomodoro regular time. Try to achive this is state with hour timer</p>

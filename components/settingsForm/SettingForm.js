@@ -29,7 +29,7 @@ export default function SettingsFrom(props){
 
   let formState, totalTime, shortBrakeCount, restTime;
   if(sendForm) {
-    formState= <p>You've updated flow time. Please return to the clock to see the changes</p>
+    formState= <p>You&apos;ve updated flow time. Please return to the clock to see the changes</p>
   }
 
   if(form.time === "50") {
@@ -50,7 +50,8 @@ export default function SettingsFrom(props){
       <nav className={styles["nav-bar"]}>
         <h2 className={styles.title}>Settings</h2>
         <Link href="/">
-          <Image 
+          <Image
+            alt="Close setting modal window" 
             layout="fixed"
             src={Close}
           />
@@ -80,7 +81,7 @@ export default function SettingsFrom(props){
           />
           <input type="submit" value="update" className={styles.submitButton} />
           <div>
-            <p>You're going to start a flow of {totalTime} 
+            <p>You&apos;re going to start a flow of {totalTime} 
               with {shortBrakeCount} possible short brakes. When you finish the flow you have {restTime} minuts for rest</p>
           </div>
         </form>

@@ -12,6 +12,7 @@ export default function MenuMobile(props){
     <Image
           className="icon"
           layout="fixed"
+          alt="Close menu"
           height={32}
           width={32}
           src={Close}
