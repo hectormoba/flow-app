@@ -20,6 +20,8 @@
   text-transform: uppercase;
 }
 
+/* GLOBAL CLASSES */
+
 .main {
   padding: $m-spacing;
   @media (min-width: $mobile) {
@@ -45,7 +47,27 @@
   min-height: 100vh;
 }
 
-/* Global resets */
+.icon {
+  cursor: pointer;
+}
+
+.link--nav {
+  letter-spacing: 0;
+  color: $main-bg;
+  &:visited {
+    color: $main-bg;
+  }
+  &:hover {
+    text-decoration: underline 0.15em $main-bg;
+    text-underline-offset: 0.4em;
+  }
+}
+
+.disabled {
+  color: $disabled !important;
+}
+
+/* RESETS */
 
 body {
   margin: 0;
@@ -86,4 +108,15 @@ select {
   border-radius: 8px;
   box-sizing: border-box;
   background-color: white;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+//display an element
+
+.not-displayed {
+  display: none !important;
 }

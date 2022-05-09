@@ -1,8 +1,14 @@
 .header {
   display: flex;
+  position: relative;
   padding: $m-spacing;
   justify-content: space-between;
   align-items: center;
+  &__desktop {
+    display: none;
+  }
+  @media (min-width: $desktop) {
+  }
 }
 
 .image {
@@ -12,5 +18,6 @@
 
 .title {
   color: $font-color;
+  cursor: pointer;
   margin: 0;
 }

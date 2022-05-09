@@ -1,4 +1,4 @@
-import { useState, useEffect, useLayoutEffect } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './timer.module.scss';
 import PauseCounter from "./PauseCounter";
 
@@ -98,8 +98,8 @@ export default function Timer(props){
             disabled
             aria-autocomplete="off"
             onClick={handleClick} 
-            className={`${styles.timer__button} font-l`}>
-              disabled
+            className={`${styles.timer__button} disabled font-l`}>
+              Pause
           </button>)
         }
         
