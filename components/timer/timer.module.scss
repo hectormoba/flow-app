@@ -9,6 +9,10 @@
   justify-content: center;
   align-items: center;
   padding: $xl-spacing 0;
+  @media (min-width: $desktop) {
+    max-width: 90%;
+    padding: $xl-spacing $m-spacing;
+  }
 }
 
 .timer__svg {

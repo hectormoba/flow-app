@@ -39,7 +39,7 @@ export default function SettingsFrom(props){
     totalTime = "1 hour and 30 minutes ";
     shortBrakeCount = "3";
   } else if (form.time === "130") {
-    totalTime = "1 hour and 30 minutes ";
+    totalTime = "2 hour and 10 minutes ";
     shortBrakeCount = "4";
   }
 

@@ -3,6 +3,13 @@
   box-sizing: border-box;
   border-radius: 8px;
   background-color: $font-color;
+  @media (min-width: $desktop) {
+    padding: $m-spacing;
+    max-width: 45vw;
+  }
+  @media (min-width: $wide-desktop-width) {
+    max-width: 35vw;
+  }
 }
 
 .nav-bar {
